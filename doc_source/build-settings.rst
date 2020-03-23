@@ -113,7 +113,7 @@ You can use bash shell scripting to set branch-specific build settings. For exam
 Navigating to a Subfolder
 ===========================
 
-For monorepos, users want to be able to cd into a folder to run the build. After you run the cd command, it applies to all stages of your build so you don't need to repeat the command in separate phases.
+For monorepos, users want to be able to cd into a folder to run the build. After you run the cd command, it applies to all stages of your build so you don't need to repeat the command in separate phases. Note that this will not affect the artifacts section so you must update that accordingly.
 
 .. code-block:: yaml
 
@@ -130,6 +130,8 @@ For monorepos, users want to be able to cd into a folder to run the build. After
         build:
           commands:
             - npm run build
+    artifacts
+      baseDirectory react-app/build
 
 .. _frontend-with-backend:
 
